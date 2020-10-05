@@ -130,33 +130,33 @@
             <form action="https://formspree.io/f/mgepvgwb" method="POST">
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input type="text" class="form-control" placeholder="First name">
+                  <input type="text" class="form-control" type="text" name="First Name" placeholder="First name">
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Last name">
+                  <input type="text" class="form-control" type="text" placeholder="Last name" name="Last Name">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Email address">
+                  <input type="text" class="form-control" type="text" placeholder="Email address" name="_replyto">
                 </div>
               </div>
 
-              <label for="country">What category of our travel menu are you interested in ?</label>
-              <select id="country" name="country">
-                  <option value="australia">  </option>
-                <option value="australia">Beach Getaways</option>
-                <option value="canada">Curated Experiences</option>
-                <option value="usa">Group Tours</option>
-                <option value="usa">Accommodation</option>
-                <option value="usa">Transfer Services</option>
-                <option value="usa">Other</option>
+              <label type="text">What category of our travel menu are you interested in ?</label>
+              <select name="category_selection" >
+                <option value="null">  </option>
+                <option value="beach_getaways">Beach Getaways</option>
+                <option value="curated_experiences">Curated Experiences</option>
+                <option value="group_tours">Group Tours</option>
+                <option value="accomodation">Accommodation</option>
+                <option value="transfer_services">Transfer Services</option>
+                <option value="other">Other</option>
               </select>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                  <textarea name="message" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
                 </div>
               </div>
               <div class="form-group row">
