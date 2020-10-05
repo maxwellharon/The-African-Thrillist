@@ -1941,13 +1941,16 @@ ul li a{
     /* display: block; */
     padding: 6px 25px;
     color: #333;
+    border-radius: 16px;
+
 }
 ul li a:hover{
     color: #fff;
-    background: #939393;
+    background: #efba6c;
+
 }
 ul li ul.dropdown{
-    max-width: 245px; /* Set width of the dropdown */
+    max-width: 250px; /* Set width of the dropdown */
     background: #f2f2f2;
     display: none;
     position: absolute;
@@ -1957,9 +1960,12 @@ ul li ul.dropdown{
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: bold;
+    border-radius: 16px;
+
 }
 ul li:hover ul.dropdown{
     display: block;	/* Display the dropdown */
+
 }
 ul li ul.dropdown li{
     display: block;
