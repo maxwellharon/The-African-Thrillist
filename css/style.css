@@ -436,6 +436,7 @@ h1, h2, h3, h4, h5,
 
 /* Navbar */
 .site-navbar {
+  font-weight: bold;
   margin-bottom: 0px;
   z-index: 1999;
   top: 0;
@@ -1940,14 +1941,13 @@ ul li a{
     /* display: block; */
     padding: 6px 25px;
     color: #333;
-    text-decoration: none;
 }
 ul li a:hover{
     color: #fff;
     background: #939393;
 }
 ul li ul.dropdown{
-    max-width: 195px; /* Set width of the dropdown */
+    max-width: 245px; /* Set width of the dropdown */
     background: #f2f2f2;
     display: none;
     position: absolute;
@@ -1956,6 +1956,7 @@ ul li ul.dropdown{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: bold;
 }
 ul li:hover ul.dropdown{
     display: block;	/* Display the dropdown */
@@ -1972,7 +1973,8 @@ ul li ul.dropdown li{
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  margin-bottom: 3.5px;
+  margin-bottom: 2px;
+  opacity: 0.8
 }
 
 .right {
