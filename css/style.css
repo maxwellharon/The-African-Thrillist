@@ -2003,3 +2003,6 @@ ul li ul.dropdown li{
   -webkit-transform: rotate(45deg);
   top: 10px;
 }
+.show-read-more .more-text{
+       display: none;
+   }

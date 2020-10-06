@@ -19,8 +19,33 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.jpeg">
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+
+<script>
+$(document).ready(function(){
+	var maxLength = 300;
+	$(".show-read-more").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+			$(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	$(".read-more").click(function(){
+		$(this).siblings(".more-text").contents().unwrap();
+		$(this).remove();
+	});
+});
+</script>
+
+
+
 
 
 
@@ -81,7 +106,7 @@
                       <li><a href="wildlife.html">Wildlife Safaris</a></li>
                       <li><a href="group.html">Group Travel</a></li>
                       <li><a href="accomodation.html">Accommodation + Transfers</a></li>
-                      <li><a href="transfer.html">Sample Itinerary</a></li>
+                      <li><a href="transfer.html">Sample Itineraries</a></li>
                     </ul>
                   </li>
                   <li><a href="merch.html" class="nav-link">Merchandise</a></li>
@@ -207,7 +232,7 @@
                 <img src="images/transfer.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
-                <h2 class="mb-1"><a href="#">Accommodation + Transferss</a></h2>
+                <h2 class="mb-1"><a href="#">Accommodation + Transfers</a></h2>
                 <a class="px-3 mb-3 category bg-primary" href="accomodation.html">View More <i class="em em-blue_car" aria-role="presentation" aria-label="RECREATIONAL VEHICLE"></i> 🏨 <i class="em em-airplane" aria-role="presentation" aria-label="AIRPLANE"></i></a>
               </div>
             </div>
@@ -216,10 +241,10 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/accomodation.jpg" alt="Image" class="img-fluid">
+                <img src="images/sample.jpg" alt="Image" class="img-fluid" style="height: 526px">
               </div>
               <div class="listing-item-content">
-                <h2 class="mb-1"><a href="#">Sample Itinerary</a></h2>
+                <h2 class="mb-1"><a href="#">Sample Itineraries</a></h2>
                 <a class="px-3 mb-3 category bg-primary" href="transfer.html">View More <i class="em em-hotel" aria-role="presentation" aria-label="HOTEL"></i></a>
               </div>
             </div>
@@ -327,7 +352,7 @@
                   <img src="images/Latanya.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div>
-                <small>&ldquo;THIS EXPERIENCE!!! My husband and I were on a short layover in Nairobi and are so blessed to have met Raisa. She was great communicating with us, flexible and knowledge about Kenya. We really enjoyed learning about the Kenyan culture by walking through the streets and experiencing the architecture, people, food (roadhouse grill...I can still taste the food) and the arts & crafts in the market. We were able to get some great deals on souvenirs to take back home. Please book this experience worth every penny!
+                <small style="overflow:hidden;display: --webkit-box;-webkit-lineclamp: 3;-webkit-box-orient: vertical;">&ldquo;THIS EXPERIENCE!!! My husband and I were on a short layover in Nairobi and are so blessed to have met Raisa. She was great communicating with us, flexible and knowledge about Kenya. We really enjoyed learning about the Kenyan culture by walking through the streets and experiencing the architecture, people, food (roadhouse grill...I can still taste the food) and the arts & crafts in the market. We were able to get some great deals on souvenirs to take back home. Please book this experience worth every penny!
                   &rdquo;</small>
                 <p>&mdash; Latanya, San Diego, CA  </p>
                 </div>
@@ -357,7 +382,7 @@
                   <img src="images/Nadia.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div>
-                <small>&ldquo;Raisa was an amazing host, everything we ate was delicious. She responded to all of my demands. She made it easy for me to visit a side of Nairobi that I would not have been able to see on my own. If you're looking for an amazing food tour, Raisa will be the perfect host for you! Also do not hesitate to ask her to personalize your tour, she is very flexible and attentive to your requests.  &rdquo;</small>
+                <small class="show-read-more">&ldquo;Raisa was an amazing host, everything we ate was delicious. She responded to all of my demands. She made it easy for me to visit a side of Nairobi that I would not have been able to see on my own. If you're looking for an amazing food tour, Raisa will be the perfect host for you! Also do not hesitate to ask her to personalize your tour, she is very flexible and attentive to your requests.  &rdquo;</small>
                 <p>&mdash; Nadia, Gatineau, Canada</p>
                 </div>
               </div>
@@ -371,7 +396,8 @@
                   <img src="images/D.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div>
-                <small>&ldquo;Raisa’s presence, power, energy and aura make this experience special and unique. From the beginning to end she catered the tour specifically to meet my interests. She provides tremendous personal life perspective on the history and culture of Nairobi, Kenya and the continent of Africa. She encompasses both a local and global perspective on the world. Some of the highlights of the tour were shopping with her at the Masai market in which she’s particularly skilled at bargaining and will get you the best possible price and the traditional Kenyan dinner we shared in which I felt like I was dining with one of my best friends! In fact, her caring and genuine presence made it easy to befriend this wonderful human. I highly recommend this extremely authentic experience.&rdquo;</small>
+                <small class="show-read-more">&ldquo;
+                  Raisa’s presence, power, energy and aura make this experience special and unique. From the beginning to end she catered the tour specifically to meet my interests. She provides tremendous personal life perspective on the history and culture of Nairobi, Kenya and the continent of Africa. She encompasses both a local and global perspective on the world. Some of the highlights of the tour were shopping with her at the Masai market in which she’s particularly skilled at bargaining and will get you the best possible price and the traditional Kenyan dinner we shared in which I felt like I was dining with one of my best friends! In fact, her caring and genuine presence made it easy to befriend this wonderful human. I highly recommend this extremely authentic experience. &ldquo;</small>
                 <p>&mdash; Deonisis, New York, NY</p>
                 </div>
               </div>
@@ -593,7 +619,6 @@
     </footer>
 
     </div>
-
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.0.js"></script>
     <script src="js/popper.min.js"></script>
@@ -608,6 +633,8 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/aos.js"></script>
+    <script src="js/show-hide-text.js"></script>
+
 
     <script src="js/main.js"></script>
 
