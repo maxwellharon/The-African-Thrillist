@@ -2056,5 +2056,4 @@ ul li ul.dropdown li{
     padding: 6px 8px;
     display: inline-block;
     outline: none;
-    position: -webkit-sticky ;
-    position: sticky ;
+}
