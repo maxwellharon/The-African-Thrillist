@@ -2046,3 +2046,15 @@ ul li ul.dropdown li{
     font-weight: bold;
     color: #efba6c;
 }
+
+.whatsapp  {
+    font-family: 'Open Sans'!important;font-size: 19px !important;
+    border-radius: 4px;
+    background: #25d366;
+    color: #fff;
+    font-size: 13px;
+    padding: 6px 8px;
+    display: inline-block;
+    outline: none;
+    position: -webkit-sticky ;
+    position: sticky ;
