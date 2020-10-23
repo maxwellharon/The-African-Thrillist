@@ -1,10 +1,9 @@
-@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+@media (min-width: 640px){
+.nav-title {
   font-size: 13px;
-  line-height: 15px;
-  letter-spacing : 1px;
+  letter-spacing: 1px;
+  line-height: 13px;
+  
 }
 
-font-size {
-  font-size: 6px;
-  
 }
