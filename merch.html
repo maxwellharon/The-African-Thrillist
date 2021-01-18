@@ -1,233 +1,370 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
+
   <head>
+    <title>The African Thrillist</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style2.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a2b0994cee.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="icon" href="images/favicon.jpeg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180247567-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-180247567-1');
+    </script>
+
+
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
   </head>
-  <body>
-  <style>
-    html {
-      box-sizing: border-box;
-    }
 
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    body {
-      margin: 0;
-    }
 
-    .preview {
-      width: 100%;
-    }
+    <div class="site-wrap" id="home-section">
 
-    .row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .row > .col {
-      padding: 0 8px;
-    }
-
-    .col {
-      float: left;
-      width: 25%;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      padding: 10px 62px 0px 62px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: black;
-    }
-
-    .modal-content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: auto;
-      padding: 0 0 0 0;
-      width: 80%;
-      max-width: 1200px;
-    }
-
-    .slide {
-      display: none;
-    }
-
-    .image-slide {
-    	width: 100%;
-    }
-
-    .modal-preview {
-    	width: 100%;
-    }
-
-    .dots {
-    	display: flex;
-    	flex-direction: row;
-    	justify-content: space-between;
-    }
-
-    img.preview, img.modal-preview {
-      opacity: 0.6;
-    }
-
-    img.active,
-    .preview:hover,
-    .modal-preview:hover {
-      opacity: 1;
-    }
-
-    img.hover-shadow {
-      transition: 0.3s;
-    }
-
-    .hover-shadow:hover {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    .close {
-      color: white;
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      font-size: 35px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #999;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .previous,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .previous:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-  </style>
-  <div class="row">
-    <div class="col">
-       <img src="https://static.pexels.com/photos/385997/pexels-photo-385997.jpeg" onclick="openLightbox();toSlide(1)" class="hover-shadow preview" alt="Toy car on the road." />
-    </div>
-    <div class="col">
-       <img src="https://static.pexels.com/photos/574521/pexels-photo-574521.jpeg" onclick="openLightbox();toSlide(2)" class="hover-shadow preview" alt="Toy car exploring offroad." />
-    </div>
-    <div class="col">
-       <img src="https://static.pexels.com/photos/386009/pexels-photo-386009.jpeg" onclick="openLightbox();toSlide(3)" class="hover-shadow preview" alt="Toy car in the city" />
-    </div>
-  </div>
-
-  <div id="Lightbox" class="modal">
-
-    <span class="close pointer" onclick="closeLightbox()">&times;</span>
-    <div class="modal-content">
-      <div class="slide">
-        <img src="https://static.pexels.com/photos/385997/pexels-photo-385997.jpeg" class="image-slide" alt="Toy car on the road." />
-      </div>
-      <div class="slide">
-        <img src="https://static.pexels.com/photos/574521/pexels-photo-574521.jpeg" class="image-slide" alt="Toy car exploring offroad." />
-      </div>
-      <div class="slide">
-        <img src="https://static.pexels.com/photos/386009/pexels-photo-386009.jpeg" class="image-slide" alt="Toy car in the city." />
-      </div>
-
-      <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
-      <a class="next" onclick="changeSlide(1)">&#10095;</a>
-
-      <div class="dots">
-        <div class="col">
-          <img src="https://static.pexels.com/photos/385997/pexels-photo-385997.jpeg" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Toy car on the road." />
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
         </div>
-        <div class="col">
-          <img src="https://static.pexels.com/photos/574521/pexels-photo-574521.jpeg" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Toy car exploring offroad." />
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+
+      <header class="site-navbar site-navbar-target" role="banner">
+
+        <p style="color:black;margin-left: 265px;font-size:30px;line-height:33px;font-family: 'Chewy';font-size: 35px;letter-spacing:5px; "><b>THE<br> AFRICAN <br>THRILLIST</b></p>
+        <div class="tours">
+        <small style="color:black;margin-left: 265px;font-size:16px;line-height:33px;margin-top:-20px;" ><b>Ecotours & Travel Agency</b></small>
+      </div>
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+            <div class="col-3 ">
+              <div class="site-logo">
+                <a href="index.html" class="font-weight-bold">
+                  <!-- <p style="background-color:black">The African Thrillist</p> -->
+                  <img src="images/imageedit_1_5012066547.png" alt="Image" class="img-fluid" style="margin-top:-175px;margin-right:-4px;width: 55%">
+                </a>
+              </div>
+            </div>
+
+            <div class="col-9  text-right" style="margin-top:-120px;">
+
+
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                  <li><a href="about.html" class="nav-link">About Us</a></li>
+                  <li>
+                    <a href="#" class="nav-link">Plan Your Trip <i class="arrow down" style="margin-top: 12px;"></i></a>
+                    <ul class="dropdown">
+                      <li><a href="beach.html">Beach Getaways</a></li>
+                      <li><a href="curated.html">Curated Experiences</a></li>
+                      <li><a href="wildlife.html">Wildlife Safaris</a></li>
+                      <li><a href="group.html">Group Travel</a></li>
+                      <li><a href="accomodation.html">Accommodation + Transfers</a></li>
+                      <li><a href="transfer.html">Sample Itineraries</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="nav-link">Merchandise</a></li>
+                <!-- <li><a href="#" class="nav-link">Specials!</a></li> -->
+                  <!-- <li><a href="blog.html" class="nav-link">Blog</a></li> -->
+                  <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+              </nav>
+            </div>
+
+
+          </div>
         </div>
-        <div class="col">
-          <img src="https://static.pexels.com/photos/386009/pexels-photo-386009.jpeg" class="modal-preview hover-shadow" onclick="toSlide(3)" alt="Toy car in the city" />
+
+      </header>
+
+    <div class="ftco-blocks-cover-1">
+      <div class="site-section-cover overlay" style="background-image: url('images/merch.jpg')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-5" data-aos="fade-up">
+              <h1 class="mb-3 text-white">Merchandise</h1>
+              <p>It’s time to shop our African-inspired kiondos, jewellery, waist bags, bucket-hats, sun-hats, tees, hoodies, backpacks etc. Definitely Something for Everyone!</p>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    let slideIndex = 1;
-    showSlide(slideIndex);
 
-    function openLightbox() {
-      document.getElementById('Lightbox').style.display = 'block';
-    };
+    <div class="site-section">
 
-    function closeLightbox() {
-      document.getElementById('Lightbox').style.display = 'none';
-    };
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-7">
+            <div class="heading-39101 mb-5">
+              <span class="backdrop text-center">Merchandise</span>
+              <span class="subtitle-39191">There's everything for everyone</span>
+              <h3>The African Thrillist</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/jewellery.jpg" alt="Image" class="img-fluid" style="height: 467px;">
+              </div>
+              <div class="listing-item-content">
+                <h2 class="mb-1"><a href="#">Jewellery</a></h2>
+                <a class="px-3 mb-3 category bg-primary" href="lamu.html">View More</a>
+              </div>
+            </div>
+          </div>
 
-    function changeSlide(n) {
-      showSlide(slideIndex += n);
-    };
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/bag.jpg" alt="Image" class="img-fluid" style="height: 467px">
+              </div>
+              <div class="listing-item-content">
+                <h2 class="mb-1"><a href="#">Bags</a></h2>
+                <a class="px-3 mb-3 category bg-primary" href="diani.html">View More</a>
+              </div>
+            </div>
+          </div>
 
-    function toSlide(n) {
-      showSlide(slideIndex = n);
-    };
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/hat.jpg" alt="Image" class="img-fluid" style="height: 467px;">
+              </div>
+              <div class="listing-item-content">
+                <h2 class="mb-1"><a href="#">Hats</a></h2>
+                <a class="px-3 mb-3 category bg-primary" href="mombasa.html">View More</a>
+              </div>
+            </div>
+          </div>
 
-    function showSlide(n) {
-      const slides = document.getElementsByClassName('slide');
-      let modalPreviews = document.getElementsByClassName('modal-preview');
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/hoodie.jpg" alt="Image" class="img-fluid" style="height: 467px;">
+              </div>
+              <div class="listing-item-content">
+                <h2 class="mb-1"><a href="#">Hoodies</a></h2>
+                <a class="px-3 mb-3 category bg-primary" href="mombasa.html">View More</a>
+              </div>
+            </div>
+          </div>
 
-      if (n > slides.length) {
-        slideIndex = 1;
-      };
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/tee.jpg" alt="Image" class="img-fluid" style="height: 467px;">
+              </div>
+              <div class="listing-item-content">
+                <h2 class="mb-1"><a href="#">Tee's</a></h2>
+                <a class="px-3 mb-3 category bg-primary" href="mombasa.html">View More</a>
+              </div>
+            </div>
+          </div>
 
-      if (n < 1) {
-        slideIndex = slides.length;
-      };
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/kiondoo.jpg" alt="Image" class="img-fluid" style="height: 467px;">
+              </div>
+              <div class="listing-item-content">
+                <h2 class="mb-1"><a href="#">African-inspired kiondos</a></h2>
+                <a class="px-3 mb-3 category bg-primary" href="mombasa.html">View More</a>
+              </div>
+            </div>
+          </div>
 
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      };
+          <!-- <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div class="listing-item-content">
+                <a class="px-3 mb-3 category bg-primary" href="#">$600.00</a>
+                <h2 class="mb-1"><a href="#">Expedita fugiat</a></h2>
+              </div>
+            </div>
+          </div> -->
 
-      for (let i = 0; i < modalPreviews.length; i++) {
-        modalPreviews[i].className = modalPreviews[i].className.replace(' active', '');
-      };
+          <!-- <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/img_5.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div class="listing-item-content">
+                <a class="px-3 mb-3 category bg-primary" href="#">$330.00</a>
+                <h2 class="mb-1"><a href="#">Consectetur adipisicing</a></h2>
+              </div>
+            </div>
+          </div> -->
 
-      slides[slideIndex - 1].style.display = 'block';
-      modalPreviews[slideIndex - 1].className += ' active';
-    };
-  </script>
-</body>
+          <!-- <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="listing-item">
+              <div class="listing-image">
+                <img src="images/img_6.jpg" alt="Image" class="img-fluid">
+              </div>
+              <div class="listing-item-content">
+                <a class="px-3 mb-3 category bg-primary" href="#">$450.00</a>
+                <h2 class="mb-1"><a href="#">Consectetur Amet</a></h2>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- <div class="site-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="heading-39101 mb-5">
+              <span class="backdrop">Beach</span>
+              <span class="subtitle-39191">Discover Story</span>
+              <h3>Beach Getaways</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quae expedita fugiat quo incidunt, possimus temporibus aperiam eum, quaerat sapiente.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos debitis enim a pariatur molestiae.</p>
+          </div>
+          <div class="col-md-6" data-aos="fade-right">
+            <img src="images/traveler.png" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
+
+    <footer class="site-footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-3">Instagram</h2>
+            <div class="row">
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_1.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_2.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_3.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_4.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_5.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_6.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_7.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_8.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+              <div class="col-4 gal_col">
+                <a href="https://www.instagram.com/theafricanthrillist/?hl=en" target="_blank"><img src="images/insta_9.jpg" alt="Image" class="img-fluid"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 ml-auto">
+            <div class="row">
+              <div class="col-lg-6 ml-auto">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="covid.html">Commitment to safety</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="termsofservice.html">Terms of Service</a></li>
+                  <li><a href="privacypolicy.html">Privacy</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <h2 class="footer-heading mb-4">Newsletter</h2>
+                <p>Join Our Mailing List !</p>
+                <form action="#" class="d-flex" class="subscribe">
+                  <input type="text" class="form-control mr-3" placeholder="Email">
+                  <input type="submit" value="Send" class="btn btn-primary">
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="icon-heart text-danger" aria-hidden="true"></i> by Max</a> -->
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            </div>
+          </div>
+
+        </div>
+        <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?l=en&amp;phone=254787611421" style=""><i class="fa fa-whatsapp"></i>
+   Chat with us on WhatsApp!</a>
+   <a href="https://www.tripadvisor.com/Attraction_Review-g294207-d16670870-Reviews-The_African_Thrillist-Nairobi.html" target="_blank"> <i class="fab fa-tripadvisor" style="font-size:30px;color:black;padding-left: 22px;padding-top: 20px;font-weight: 13px;"></i></a>
+     <a href="https://www.airbnb.com/users/119715876/listings" target="_blank">  <i class="fab fa-airbnb" style="font-size:30px;color:black;padding-left: 22px;padding-top: 20px;font-weight: 13px;" ></i></a>
+      </div>
+    </footer>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/main.js"></script>
+
+  </body>
+
 </html>
