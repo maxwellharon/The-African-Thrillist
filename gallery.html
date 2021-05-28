@@ -3,196 +3,168 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>The African Thrillist - Smile with us ;-)</title>
+    <title>The African Thrillist - Gallery</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-        .hide-bullets {
-    list-style:none;
-    margin-left: -40px;
-    margin-top:20px;
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #efba6c;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
+}
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
 }
 
-.thumbnail {
-    padding: 0;
-}
-
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+.port-image
+{
     width: 100%;
 }
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="container">
-    <div id="main_area">
-        <!-- Slider -->
+ <div class="container">
         <div class="row">
-            <div class="col-sm-6" id="slider-thumbs">
-                <!-- Bottom switcher of slider -->
-                <ul class="hide-bullets">
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-0">
-                            <img src="images/gallery/1.jpg">
-                        </a>
-                    </li>
-
-                    <!-- <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-1"><img src="images/gallery/1.jpg"></a>
-                    </li> -->
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-2"><img src="images/gallery/2.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-3"><img src="images/gallery/3.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-4"><img src="images/gallery/4.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-5"><img src="images/gallery/5.jpg"></a>
-                    </li>
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-6"><img src="images/gallery/6.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-7"><img src="images/gallery/7.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-8"><img src="images/gallery/8.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-9"><img src="images/gallery/9.jpg"></a>
-                    </li>
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-10"><img src="images/gallery/10.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-11"><img src="images/gallery/11.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-12"><img src="images/gallery/12.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-13"><img src="images/gallery/13.jpg"></a>
-                    </li>
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-14"><img src="images/gallery/13.jpg"></a>
-                    </li>
-
-                    <li class="col-sm-3">
-                        <a class="thumbnail" id="carousel-selector-15"><img src="images/gallery/14.jpg"></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <div class="col-xs-12" id="slider">
-                    <!-- Top part of the slider -->
-                    <div class="row">
-                        <div class="col-sm-12" id="carousel-bounding-box">
-                            <div class="carousel slide" id="myCarousel">
-                                <!-- Carousel items -->
-                                <div class="carousel-inner">
-                                    <div class="active item" data-slide-number="0">
-                                        <img src="images/gallery/1.jpg"></div>
-
-                                    <div class="item" data-slide-number="1">
-                                        <img src="images/gallery/2.jpg"></div>
-
-                                    <div class="item" data-slide-number="2">
-                                        <img src="images/gallery/3.jpg"></div>
-
-                                    <div class="item" data-slide-number="3">
-                                        <img src="images/gallery/4.jpg"></div>
-
-                                    <div class="item" data-slide-number="4">
-                                        <img src="images/gallery/5.jpg"></div>
-
-                                    <div class="item" data-slide-number="5">
-                                        <img src="images/gallery/6.jpg"></div>
-
-                                    <div class="item" data-slide-number="6">
-                                        <img src="images/gallery/7.jpg"></div>
-
-                                    <div class="item" data-slide-number="7">
-                                        <img src="images/gallery/8.jpg"></div>
-
-                                    <div class="item" data-slide-number="8">
-                                        <img src="images/gallery/9.jpg"></div>
-
-                                    <div class="item" data-slide-number="9">
-                                        <img src="images/gallery/10.jpg"></div>
-
-                                    <div class="item" data-slide-number="10">
-                                        <img src="images/gallery/11.jpg"></div>
-
-                                    <div class="item" data-slide-number="11">
-                                        <img src="images/gallery/12.jpg"></div>
-
-                                    <div class="item" data-slide-number="12">
-                                        <img src="images/gallery/13.jpg"></div>
-
-                                    <div class="item" data-slide-number="13">
-                                        <img src="images/gallery/1.jpg"></div>
-
-                                    <div class="item" data-slide-number="14">
-                                        <img src="images/gallery/2.jpg"></div>
-
-                                    <div class="item" data-slide-number="15">
-                                        <img src="images/gallery/3.jpg"></div>
-                                </div>
-                                <!-- Carousel nav -->
-                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
-                                </a>
-                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/Slider-->
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="gallery-title">Gallery</h1>
         </div>
 
+        <!-- <div align="center">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
+            <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Irrigation Pipes</button>
+        </div> -->
+        <br/>
+
+
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                <img src="images/gallery/1.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="images/gallery/2.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                <img src="images/gallery/3.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="images/gallery/4.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                <img src="images/gallery/5.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="images/gallery/6.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                <img src="images/gallery/7.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="images/gallery/8.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                <img src="images/gallery/9.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                <img src="images/gallery/10.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                <img src="images/gallery/11.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="images/gallery/12.jpg" class="img-responsive">
+            </div>
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="images/gallery/13.jpg" class="img-responsive">
+            </div>
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="images/gallery/14.jpg" class="img-responsive">
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
 <script type="text/javascript">
-  jQuery(document).ready(function($) {
+$(document).ready(function(){
 
-        $('#myCarousel').carousel({
-                interval: 5000
-        });
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
 
-        //Handles the carousel thumbnails
-        $('[id^=carousel-selector-]').click(function () {
-        var id_selector = $(this).attr("id");
-        try {
-            var id = /-(\d+)$/.exec(id_selector)[1];
-            console.log(id_selector, id);
-            jQuery('#myCarousel').carousel(parseInt(id));
-        } catch (e) {
-            console.log('Regex failed!', e);
+        if(value == "all")
+        {
+            //$('.filter').removeClass('hidden');
+            $('.filter').show('1000');
+        }
+        else
+        {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+
         }
     });
-        // When the carousel slides, auto update the text
-        $('#myCarousel').on('slid.bs.carousel', function (e) {
-                 var id = $('.item.active').data('slide-number');
-                $('#carousel-text').html($('#slide-content-'+id).html());
-        });
+
+    if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
 });
 </script>
 </body>
