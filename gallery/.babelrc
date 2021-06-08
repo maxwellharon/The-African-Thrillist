@@ -1,0 +1,9 @@
+{
+    'presets': [
+        'env',
+        [
+            'minify',
+            { builtIns: false }
+        ]
+    ]
+}

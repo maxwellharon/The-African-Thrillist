@@ -1,0 +1,104 @@
+
+    .kgdeGalleryImages {
+        position: relative;
+        height: 67vw;
+        flex-basis: 100%;
+        order: 0;
+
+        @media #{$bpSmall} {
+            max-height: 250px;
+            height: 34vw;
+            flex-basis: 48%;
+        }
+
+        @media #{$bpMedium} {
+            max-height: 500px;
+            height: 42vw;
+            flex-basis: 68%;
+        }
+
+        .kgdeGalleryImage {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+
+            &:before {
+                content: '';
+                vertical-align: middle;
+                display: inline-block;
+                height: 100%;
+                width: 0;
+                overflow: hidden;
+            }
+
+            img {
+                max-height: 100%;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                vertical-align: middle;
+            }
+
+            &:first-child {
+                transform: scale(1);
+                opacity: 1;
+
+                animation-name: imageFade;
+                animation-duration: 0.2s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+                animation-delay: 0.3s;
+            };
+
+            &:last-child {
+                transform: scale(0.3);
+                opacity: 0;
+
+                animation-name: imageAppear;
+                animation-duration: 0.2s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+                animation-delay: 0.3s;
+            };
+
+        }
+    }
+
+    .kgdeGalleryDescription {
+        flex-basis: 100%;
+        order: 2;
+        font-size: 13px;
+        padding-top: 10px;
+
+        @media #{$bpSmall} {
+            padding-top: 0;
+            flex-basis: 48%;
+            order: 1;
+        }
+
+        @media #{$bpMedium} {
+            font-size: inherit;
+            flex-basis: 28%;
+            order: 1;
+        }
+
+        div a {
+            font-size: 12px;
+            font-family: arial;
+            color: #000000;
+        }
+    }
+
+    @keyframes imageAppear {
+        0%   { transform: scale(0.3); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes imageFade {
+        0%   { transform: scale(1); opacity: 1; }
+        100% { transform: scale(0.3); opacity: 0; }
+    }
